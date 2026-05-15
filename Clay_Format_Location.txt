@@ -1,0 +1,14 @@
+TRIM(
+BillingCity &
+IF(AND(NOT(ISBLANK(BillingCity)), NOT(ISBLANK(BillingState))), ", ", "") &
+BillingState &
+IF(
+AND(
+NOT(ISBLANK(BillingCountry)),
+OR(NOT(ISBLANK(BillingCity)), NOT(ISBLANK(BillingState)))
+),
+", ",
+""
+) &
+BillingCountry
+)

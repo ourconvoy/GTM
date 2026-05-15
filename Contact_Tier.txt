@@ -1,0 +1,7 @@
+IF(( Last_Opportunity_Date__c >=(Today()- 1095) && (Opportunities_ClosedWon__c > 0)), "1 - Client, Current",
+IF(( Last_Opportunity_Date__c >=(Today()- 1095) && (Opportunities_ClosedWon__c = 0)), "2 - Client, Current Prospect",
+IF(( Last_Opportunity_Date__c <=(Today()- 1095) && (Opportunities_ClosedWon__c > 0)), "3 - Client, Lapsed",
+IF(( Last_Opportunity_Date__c <=(Today()- 1095) && (Opportunities_ClosedWon__c = 0)), "4 - Prospect, Lapsed",
+IF(( Last_Meeting_Date__c >=(Today()- 1095)), "5 - Prospect, Met Recently",
+IF(( pi__last_activity__c >= (Now()- 365)), "6 - Prospect, Marketing Engaged",
+"7 - Cold"))))))
